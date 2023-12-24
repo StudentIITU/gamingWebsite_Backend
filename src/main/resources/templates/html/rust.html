@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/games.css">
+    <title>GameMates | Rust</title>
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">GameMates</h2>
+        <nav class="navigation">
+            <a class="nav-link" href="home.html">Home</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="faqs.html">FAQs</a>
+            <a href="login.html">
+                <button class="btnLogin-popup">Login</button>
+            </a>
+            <a href="singup.html">
+                <button class="btnLogin-popup">Signup</button>
+            </a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="heading">Rust</h1>
+
+        <div class="container-cards">
+            <div class="card-section">
+                <div class="filter-input-groups">
+
+                    <div class="input-group"><label class="input-label">
+                            <h4 class="input-label-text">Age</h4>
+                        </label>
+
+                        <div class="range-input">
+                            <span class="range-input-from">From</span>
+                            <input class="range-input-part" type="tel">
+                            <span class="range-input-to">to</span>
+                            <input class="range-input-part" type="tel">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">
+                            <h4 class="input-label-text">Language</h4>
+                        </label>
+
+                        <div class="select">
+                            <div class="selected-closed"></div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">
+                            <input class="checkbox" type="checkbox" id="checkbox">
+                            <h4 class="input-label-text">Microphone</h4>
+
+                        </label>
+
+                        <div class="checkbox-input">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">
+                            <i class="fas fa-medal input-label-icon"></i>
+                            <h4 class="input-label-text">Rank</h4>
+                        </label>
+
+                        <div class="select">
+                            <div class="selected-closed"></div>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label">
+                            <i class="fas fa-crosshairs input-label-icon"></i>
+                            <span class="input-label-text">Game modes</span>
+                        </label>
+
+                        <div class="select">
+                            <div class="selected-closed"></div>
+                        </div>
+                    </div>
+
+                    <div class="filters-buttons">
+                        <button class="filters-clear-button">
+                            <i class="fas fa-eraser button-icon"></i>
+                            Clear filters
+                        </button>
+
+                        <button class="filters-apply-button">
+                            <i class="fas fa-filter button-icon"></i>
+                            Apply filters
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="profiles-card" class="card">
+                <!-- <div class="card-header">
+                    <div>
+                        <h2 class="card-heading">Player profiles</h2><span class="divider">•</span><span
+                            class="card-subheading">Showing 1 - 10 out of 2130 players</span>
+                    </div>
+                    <a class="primary-button">
+                        <i class="fas fa-user-plus button-icon"></i>
+                        Create player profile
+                    </a>
+                </div> -->
+
+                <div class="card-profile">
+                    <div class="profile-header">
+                        <div>
+                            <h3 class="profile-heading">
+                                <a class="" href="#" tabindex="0">StepV13579</a>
+                            </h3>
+                            <span class="divider">•</span>
+                            <span class="profile-subheading">Updated 4 hours ago</span>
+                        </div>
+
+                        <div class="popover-container">
+                            <i class="fas fa-ellipsis-h options-button-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="detail-columns">
+                        <div class="detail-column">
+                            <h4 class="detail-column-heading">Contacts</h4>
+                            <p class="detail">
+                                <i class="fab fa-discord detail-icon"></i>
+                                <span class="detail-label">Discord:</span>
+                                <span>
+                                    <span class="copyable">Stepik13579#4094</span>
+                                    <span class="copyable-copy">Copy</span>
+                                </span>
+                            </p>
+
+                            <p class="detail">
+                                <span class="detail-label">Steam ID: </span>
+                                <span>
+                                    <span class="copyable">76561198182818837</span>
+                                    <span class="copyable-copy">Copy</span>
+                                </span>
+                            </p>
+
+                            <p class="detail">
+                                <a class="detail-url" target="_blank" rel="noopener" href="#">Steam profile</a>
+                            </p>
+
+                            <h4 class="detail-column-heading">Trackers</h4>
+                            <p class="detail">
+                                <i class="fas fa-link detail-icon"></i>
+                                <!-- <a class="detail-url" target="_blank rel="noopener" href="#">opendota.com</a> -->
+                            </p>
+
+                            <p class="detail">
+                                <i class="fas fa-link detail-icon"></i>
+                                <a class="detail-url" target="_blank" rel="noopener" href="#">dotabuff.com</a>
+                            </p>
+
+                            <h4 class="detail-column-heading">Player details</h4>
+                            <p class="detail">
+                                <i class="fas fa-calendar-alt detail-icon"></i>
+                                <span class="detail-labelless">Is </span>
+                                    <span class="detail-emphasize">22</span> 
+                                    years old
+                            </p>
+
+                            <p class="detail">
+                                <i class="fas fa-globe-europe detail-icon"></i>
+                                <span class="detail-labelless">Lives in </span>
+                                <span class="detail-emphasize">Europe</span>
+                            </p>
+
+                            <p class="detail">
+                                <i class="fas fa-comments detail-icon"></i>
+                                <span class="detail-labelless">Speaks </span>
+                                    <span class="detail-emphasize">Czech</span>
+                                and
+                                <span class="detail-emphasize">English</span>
+                            </p>
+
+                            <p class="detail">
+                                <i class="fas fa-microphone detail-icon"></i>
+                                <span class="detail-labelless detail-emphasize">Has a microphone</span> 
+                                and is willing to communicate
+                            </p>
+
+                            <h4 class="detail-column-heading">Game details</h4>
+                            <p class="detail">
+                                <i class="fas fa-medal detail-icon"></i>
+                                <span class="detail-label">Rank:</span>
+                                <span class="detail-emphasize">Archon</span>
+                            </p>
+
+                            <p class="detail">
+                                <i class="fas fa-globe-europe detail-icon"></i>
+                                <span class="detail-label">Region: </span>
+                                <span class="detail-emphasize">Europe East</span>,
+                                <span class="detail-emphasize">Europe West</span>
+                            </p>
+
+                            <p class="detail">
+                                <i class="fas fa-bullseye detail-icon"></i>
+                                <span class="detail-label">Role: </span>
+                                <span class="detail-emphasize">Off lane</span>, 
+                                <span class="detail-emphasize">Soft support</span>, 
+                                <span class="detail-emphasize">Hard support</span>
+                            </p>
+
+                            <p class="detail">
+                                <i class="fas fa-crosshairs detail-icon"></i>
+                                <span class="detail-label">Interest: </span>
+                                <span class="detail-emphasize">Unranked</span>,
+                                <span class="detail-emphasize">Ranked</span>
+                            </p>
+                        </div>
+
+                        <div class="detail-column">
+                            <h4 class="detail-column-heading">About</h4>
+                            <p class="detail-paragraph">Just looking for someone chill to play with.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <div class="pagination-left-buttons">
+                        <button class="pagination-first-button" disabled="">First</button>
+                        <button class="pagination-previous-button" disabled="">Previous</button>
+                    </div>
+
+                    <div class="pagination-page">1/213</div>
+                    <div class="pagination-right-buttons">
+                        <button class="pagination-next-button">Next</button>
+                        <button class="pagination-last-button">Last</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

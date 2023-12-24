@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/other.css" />
+    <title>GameMates | Eye Trainig</title>
+    <style>
+      .ball {
+        margin-top: 400px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+
+      .fullscreen-text {
+        font-size: 4em;
+        color: white;
+        animation: moveAround 1s linear infinite;
+      }
+
+      @keyframes moveAround {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        10% {
+          transform: translate(calc(50vw * var(--x)), calc(50vh * var(--y)))
+            rotate(36deg);
+        }
+        20% {
+          transform: translate(calc(50vw * var(--x)), calc(50vh * var(--y)))
+            rotate(72deg);
+        }
+        30% {
+          transform: translate(calc(50vw * var(--x)), calc(50vh * var(--y)))
+            rotate(108deg);
+        }
+        40% {
+          transform: translate(calc(50vw * var(--x)), calc(50vh * var(--y)))
+            rotate(144deg);
+        }
+        50% {
+          transform: translate(calc(50vw * var(--x)), calc(50vh * var(--y)))
+            rotate(180deg);
+        }
+        60% {
+          transform: translate(calc(50vw * var(--x)), calc(50vh * var(--y)))
+            rotate(216deg);
+        }
+        70% {
+          transform: translate(calc(50vw * var(--x)), calc(50vh * var(--y)))
+            rotate(252deg);
+        }
+        80% {
+          transform: translate(calc(50vw * var(--x)), calc(50vh * var(--y)))
+            rotate(288deg);
+        }
+        90% {
+          transform: translate(calc(50vw * var(--x)), calc(50vh * var(--y)))
+            rotate(324deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h2 class="logo">GameMates</h2>
+      <nav class="navigation">
+        <a class="nav-link" href="home.html">Home</a>
+        <a class="nav-link" href="eye.html">Eye Training</a>
+        <a class="nav-link" href="about.html">About Us</a>
+        <a class="nav-link" href="faqs.html">FAQs</a>
+        <a href="login.html">
+          <button class="btnLogin-popup">Login</button>
+        </a>
+        <a href="singup.html">
+          <button class="btnLogin-popup">Signup</button>
+        </a>
+      </nav>
+    </header>
+
+    <div class="ball">
+      <div class="fullscreen-text" id="movingText">
+        <p>🟤</p>
+      </div>
+    </div>
+
+    <script>
+      const movingText = document.getElementById("movingText");
+
+      function setRandomCoordinates() {
+        const x = Math.random() * 2 - 1;
+        const y = Math.random() * 2 - 1;
+        movingText.style.setProperty("--x", x);
+        movingText.style.setProperty("--y", y);
+      }
+
+      setRandomCoordinates();
+
+      movingText.addEventListener("animationiteration", setRandomCoordinates);
+    </script>
+  </body>
+</html>
