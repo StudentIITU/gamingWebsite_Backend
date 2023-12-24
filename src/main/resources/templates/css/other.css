@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1a1c;
+    background-position: center;
+}
+
+header {
+    background-color: #26262c;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+button {
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+    text-decoration: none;
+}
+
+.navigation .nav-link {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.navigation .nav-link:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+/* //////////////////////////////                          ABOUT US                            /////////////////////////////////   */
+
+.about-body {
+    display: flex;
+    color: #d3d3d3;
+    /* color: #fff; */
+}
+
+.about-main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #26262c;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-heading {
+    text-align: center;
+}
+
+.about-main p {
+    line-height: 1.6;
+}
+
+.about-btn-div {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.about-button {
+    display: inline-block;
+    margin-left: 10px;
+    max-width: 500px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    background: #9147ff;
+
+    transition: background-color 0.3s;
+}
+
+.about-button:hover {
+    background: #4c2588;
+}
+
+/* //////////////////////////////                          FAQs PAGE                            /////////////////////////////////   */
+
+.faqs-body {
+    display: flex;
+    color: #d3d3d3;
+}
+
+.faqs-main {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #26262c;
+
+    border-radius: 17px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.faqs-question {
+    margin-top: 20px;
+}
+
+.faqs-answer {
+    line-height: 1.6;
+}
+
+.faqs-button-container {
+    margin-top: 20px;
+}
+
+.faqs-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background: #9147ff;
+    color: #fff;
+    margin-left: 10px;
+
+    border-radius: 7px;
+    transition: background-color 0.3s;
+}
+
+.faqs-button:hover {
+    background: #4c2588;
+}
+
+/* //////////////////////////////                          Soon                            /////////////////////////////////   */
+
+.soon-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d3d3d3;
+}
+
+.soon-main {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #26262c;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.soon-content {
+    margin-top: 20px;
+}
+
+.soon-text {
+    line-height: 1.6;
+}
+
+.soon-form {
+    margin-top: 20px;
+}
+
+.soon-label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.soon-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: #26262c;
+}
+
+.soon-button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #9147ff;
+    border: none;
+
+    transition: background-color 0.3s;
+}
+
+.soon-button:hover {
+    background: #4c2588;
+}

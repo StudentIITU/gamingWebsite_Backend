@@ -1,0 +1,364 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a1a1c;
+    background-position: center;
+}
+
+header {
+    background-color: #26262c;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo {
+    font-size: 2em;
+    color: #fff;
+    user-select: none;
+}
+
+.navigation a {
+    text-decoration: none;
+}
+
+.navigation .nav-link {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.navigation .nav-link:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #fff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.navigation .btnLogin-popup:hover {
+    background: #fff;
+    color: #162938;
+}
+
+.container {
+    margin-top: 30px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 50px;
+}
+
+.heading {
+    color: #fff;
+    margin-bottom: 1%;
+}
+
+.card-section {
+    background-color: #26262c;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    width: 450px;
+    right: 200px;
+    min-height: 500px;
+    margin-bottom: 40px;
+    max-height: 200px;
+}
+
+.card-profile {
+    margin-left: 20%;
+    background-color: #26262c;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    right: 200px;
+    min-height: 522px;
+}
+
+.input-label-text {
+    margin-left: 20px;
+    max-width: 50px;
+    margin-top: 5px;
+    margin-bottom: 3%;
+}
+
+.input-group .range-input {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.input-group {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.range-input {
+    display: inline;
+    max-width: 100%;
+    margin: 15px 0;
+}
+
+.range-input-part {
+    max-width: 100px;
+    background-color: #51515a;
+    margin: 0 5px;
+    color: #fff;
+}
+
+.input-label {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    width: 80px;
+}
+
+.select {
+    margin-left: 60px;
+    width: 170px;
+    height: 30px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.selected-closed {
+    height: 100%;
+    width: 170px;
+    position: absolute;
+    background-color: #51515a;
+    color: #fff;
+}
+
+.input-group:hover .selected-closed {
+    opacity: 1;
+}
+
+.checkbox-input {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+    transform: scale(1.5);
+}
+
+.checkbox {
+    opacity: 50%;
+}
+
+.filters-buttons {
+    margin-left: 55px;
+    margin-right: 8%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filters-clear-button,
+.filters-apply-button {
+    padding: 13px 13px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.filters-clear-button:hover {
+    background-color: rgb(194, 192, 198);
+    color: #26262c;
+}
+
+.filters-apply-button:hover {
+    background-color: #543682;
+    color: #ccc;
+}
+
+.button-icon {
+    margin-right: 10px;
+}
+
+.filters-clear-button {
+    background: transparent;
+    outline: none;
+    background-color: gray;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.5s;
+    text-decoration: none;
+    color: #fff;
+}
+
+.filters-apply-button {
+    background: transparent;
+    background-color: #9147ff;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: #fff;
+}
+
+.container-cards {
+    color: #fff;
+    display: grid;
+    grid-template-columns: 450px 450px;
+    gap: 30px;
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////// */
+
+.card {
+    margin: 0;
+    width: 450px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.card-profile {
+    background-color: #26262c;
+    border-radius: 20px;
+    color: #fff;
+    padding: 20px;
+    /* margin: 20px; */
+    width: 420px;
+    min-height: 700px;
+    margin: 0;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-heading a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #9147ff;
+    margin: 0;
+}
+
+.divider {
+    margin: 0 10px;
+    color: #ccc;
+}
+
+.profile-subheading {
+    color: #ccc;
+}
+
+.options-button-icon {
+    color: #ccc;
+    cursor: pointer;
+}
+
+.detail-columns {
+    /* display: flex; */
+    justify-content: space-between;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.detail-column {
+    /* flex: 1; */
+    text-align: left;
+}
+
+.detail-columning {
+    flex: 1;
+    text-align: left;
+}
+
+.detail-column-heading {
+    color: #9147ff;
+    margin-bottom: 10px;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.detail-label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.detail-url {
+    text-decoration: none;
+    color: #9147ff;
+}
+
+.detail-url:hover {
+    text-decoration: underline;
+}
+
+.detail-labelless {
+    margin-right: 5px;
+}
+
+.detail-emphasize {
+    font-weight: bold;
+}
+
+.detail-paragraph {
+    margin: 0;
+    color: #ccc;
+}
