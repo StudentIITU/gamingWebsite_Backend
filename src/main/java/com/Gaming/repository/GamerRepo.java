@@ -1,8 +1,12 @@
 package com.Gaming.repository;
 
-import com.Gaming.components.Gamer;
+import com.Gaming.entities.GamerEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface GamerRepo extends JpaRepository<Gamer, Long> {
-    Gamer findByEmail(String email);
+import java.util.Optional;
+
+public interface GamerRepo extends JpaRepository<GamerEntity, Long> {
+    Optional<GamerEntity> findByEmail(String email);
 }
+
+// SPRITE UJE SPAT

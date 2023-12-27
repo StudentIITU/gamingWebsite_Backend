@@ -1,55 +1,51 @@
 package com.Gaming.securityconfig;
 
 
+import com.Gaming.impl.GamerDetailsImpl;
+import com.Gaming.service.impl.GamerDetailsServiceImpl;
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
-import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
+@AllArgsConstructor
 public class SecurityConfig {
-
-
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder() {
+    GamerDetailsServiceImpl gamerDetailsService;
+    private BCryptPasswordEncoder encoder() {
         return new BCryptPasswordEncoder();
     }
+
     @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
+    public DaoAuthenticationProvider daoauthenticationProvider() {
+        DaoAuthenticationProvider auth = new DaoAuthenticationProvider();
+        auth.setUserDetailsService(gamerDetailsService);
+        auth.setPasswordEncoder(encoder());
+        return auth;
     }
 
     @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/css/**", "/js/**").permitAll()
+                .authorizeHttpRequests(requests -> requests
+                        .requestMatchers("/", "/css/**", "/js/**", "/login", "/signup", "/dota2", "/cs2", "/valorant", "/fortnite", "/overwatch", "/soon").permitAll()
                         .anyRequest().authenticated()
                 )
-                .formLogin(formlogin -> formlogin
+                .formLogin(form -> form
                                 .loginPage("/login").permitAll()
-                                .usernameParameter("email")
-                                .passwordParameter("password")
-                                .loginProcessingUrl("/auth").permitAll()
-                                .defaultSuccessUrl("/")
-                        // ... other form login configuration
+                        .defaultSuccessUrl("/profile", true)
                 )
-                .logout(logout -> logout
-                        .logoutUrl("/logout").permitAll()
-                        .logoutSuccessUrl("/login?logout=true")
-                )
-                .exceptionHandling((exception) -> exception.accessDeniedPage("/403"))
-                .csrf(AbstractHttpConfigurer::disable); // If intentionally disabling CSRF
+                .logout(LogoutConfigurer::permitAll);
 
+//                .csrf(AbstractHttpConfigurer::disable); // If intentionally disabling CSRF
         return http.build();
     }
+
 }

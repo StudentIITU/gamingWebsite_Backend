@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
 @SpringBootApplication
-@EntityScan("com.Gaming.components") // Package containing entity classes
+@EntityScan("com.Gaming.entities") // Package containing entity classes
 public class RegisterLoginApplication {
 
         public static void main(String[] args) {

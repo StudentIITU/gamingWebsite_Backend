@@ -1,5 +1,4 @@
 package com.Gaming.controllers;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,43 +7,50 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @GetMapping(value = "/")
-    public String index(Model model) {
-
-//        ArrayList<Items> items = DBManager.getItems();
-//        model.addAttribute("tovary", items);
+    public String index() {
         return "/html/home";
     }
 
-    @GetMapping(value = "/about")
-    public String about() {
-        return "/html/about";
+    @GetMapping(value = "/login")
+    public String login() {
+        return "html/login";
     }
 
-//    @GetMapping(value = "/about")
-//    public String about() {
-//        return "about";
-//    }
-
-//    @PostMapping(value = "/add-item")
-//    public String addItem(
-//            @RequestParam(name = "item_name", defaultValue = "No Item") String name,
-//            @RequestParam(name = "item_price", defaultValue = "0") int price) {
-//
-//        DBManager.addItem(new Items(null, name, price));
-//        return "redirect:/";
-//    }
-
-//    @GetMapping(value= "/details/{id}")
-//    public String details(Model model, @PathVariable(name = "id") Long id){
-//        Items item = DBManager.getItems(id);
-//        model.addAttribute("item", item);
-//        return "details";
-//    }
-
-    @GetMapping(value = "/403")
-    public String accessDenied(Model model) {
-        return "403";
+    @GetMapping(value="/dota2")
+    public String dota2(Model model){
+        return "/html/dota2";
     }
+
+    @GetMapping(value="/cs2")
+    public String cs2(Model model){
+        return "/html/cs2";
+    }
+    @GetMapping(value="/valorant")
+    public String valorant(Model model){
+        return "/html/valorant";
+    }
+
+    @GetMapping(value="/fortnite")
+    public String fortnite(Model model){
+        return "/html/fortnite";
+    }
+
+    @GetMapping(value="/overwatch")
+    public String owerwatch2(Model model){
+        return "/html/overwatch";
+    }
+
+
+
+
+
+    @GetMapping(value="/soon")
+    public String soon(Model model){
+        return "/html/soon";
+    }
+
+
+
 
 
 }

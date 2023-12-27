@@ -1,4 +1,5 @@
-<html xmlns:th = "http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec = "http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,16 +11,27 @@
 <header>
     <h2 class="logo">GameMates</h2>
     <nav class="navigation">
-        <a class="nav-link" th:href="@{/html/home.html}">Home</a>
-        <a class="nav-link" th:href="@{/html/eye.html}">Eye Training</a>
-        <a class="nav-link" th:href="@{/html/about.html}">About Us</a>
-        <a class="nav-link" th:href="@{/html/faqs.html}">FAQs</a>
-        <a th:href="@{/html/login.html}">
-            <button class="btnLogin-popup">Login</button>
-        </a>
-        <a th:href="@{/html/signup.html}">
-            <button class="btnLogin-popup">Signup</button>
-        </a>
+        <a class="nav-link" th:href="@{/home}">Home</a>
+        <a class="nav-link" th:href="@{/eye}">Eye Training</a>
+        <a class="nav-link" th:href="@{/about}">About Us</a>
+        <a class="nav-link" th:href="@{/faqs}">FAQs</a>
+
+        <div class="nav-link-container" th:if="${session['username'] == null}">
+            <a th:href="@{/login}">
+                <button class="btnLogin-popup">Login</button>
+            </a>
+            <a th:href="@{/signup}">
+                <button class="btnLogin-popup">Signup</button>
+            </a>
+        </div>
+        <div class="nav-link-container" th:if="${session['username'] != null}">
+            <a th:href="@{/profile}">
+                <button class="btnLogin-popup">Profile</button>
+            </a>
+            <a th:href="@{/logout}">
+                <button class="btnLogin-popup">Logout</button>
+            </a>
+        </div>
     </nav>
 </header>
 
@@ -30,7 +42,7 @@
         <span class="icon">
           <ion-icon name="search"></ion-icon>
         </span>
-        <input class="serch-input" type="text" placeholder="Game title" />
+        <input class="search-input" type="text" placeholder="Game title" />
     </div>
 
     <div class="grid-container">
@@ -44,7 +56,7 @@
             </div>
         </a>
 
-        <a class="grid-link" th:href="@{/html/cs.html}">
+        <a class="grid-link" th:href="@{/cs2}">
             <div class="grid-item">
                 <img th:src="@{/img/cs2.png}" alt="Game 2" class="game-image" />
                 <div class="game-details">
@@ -104,7 +116,7 @@
             </div>
         </a>
 
-        <a class="grid-link" th:href="@{/html/soon.html}">
+        <a class="grid-link" th:href="@{/soon}">
             <div class="grid-item">
                 <img th:src="@{/img/soon.jpg}" alt="Game 3" class="game-image" />
                 <div class="game-details">

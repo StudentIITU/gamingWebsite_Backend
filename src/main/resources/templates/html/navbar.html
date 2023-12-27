@@ -1,0 +1,35 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navigation">
+    <a class="nav-link" th:href="@{/home}">Home</a>
+    <a class="nav-link" th:href="@{/eye}">Eye Training</a>
+    <a class="nav-link" th:href="@{/about}">About Us</a>
+    <a class="nav-link" th:href="@{/faqs}">FAQs</a>
+    <div th:if="${session['username'] == null}">
+        <a class="nav-link" th:href="@{/login}">
+            <button class="btnLogin-popup">Login</button>
+        </a>
+        <a class="nav-link" th:href="@{/signup}">
+            <button class="btnLogin-popup">Signup</button>
+        </a>
+    </div>
+    <div th:if="${session['username'] != null}">
+        <a class="nav-link" th:href="@{/profile}">
+            <button class="btnLogin-popup">Profile</button>
+        </a>
+        <a class="nav-link" th:href="@{/logout}">
+            <button class="btnLogin-popup">Logout</button>
+        </a>
+    </div>
+</nav>
+<div class="container" layout:fragment="site_fragment"></div>
+</body>
+</html>

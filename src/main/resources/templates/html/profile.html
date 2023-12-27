@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/other.css}" />
+    <title>GameMates | Admin Panel</title>
 </head>
-<body>
-$END$
+
+<body class="admin-body">
+<h2>Welcome, <span th:text="${currentGamer?.username}"></span>!</h2>
+
+<header>
+    <h2 class="logo">GameMates</h2>
+    <nav class="navigation">
+        <a class="nav-link" th:href="@{/home}">Home</a>
+        <a class="nav-link" th:href="@{/eye}">Eye Training</a>
+        <a class="nav-link" th:href="@{/about}">About Us</a>
+        <a class="nav-link" th:href="@{/faqs}">FAQs</a>
+
+<!--        <div class="nav-link-container" th:if="${session['username'] == null}">-->
+<!--            <a th:href="@{/login}">-->
+<!--                <button class="btnLogin-popup">Login</button>-->
+<!--            </a>-->
+<!--            <a th:href="@{/signup}">-->
+<!--                <button class="btnLogin-popup">Signup</button>-->
+<!--            </a>-->
+<!--        </div>-->
+<!--        <div class="nav-link-container" th:if="${session['username'] != null}">-->
+<!--            <a th:href="@{/profile}">-->
+<!--                <button class="btnLogin-popup">Profile</button>-->
+<!--            </a>-->
+<!--            <a th:href="@{/logout}">-->
+<!--                <button class="btnLogin-popup">Logout</button>-->
+<!--            </a>-->
+<!--        </div>-->
+    </nav>
+</header>
+
+<main class="profile-container">
+<!--    <section class="profile-header">-->
+<!--        <h1 class="profile-username" th:text="${currentGamer.username}">Username</h1>-->
+<!--        <p class="profile-location" th:text="${userProfile.location}">Location</p>-->
+<!--    </section>-->
+
+<!--    <section class="profile-details">-->
+<!--        <div class="profile-column">-->
+<!--            <h2>Contact Information</h2>-->
+<!--            <p class="profile-detail" th:text="'Email: ' + ${userProfile.email}">Email: user@example.com</p>-->
+<!--        </div>-->
+
+<!--        <div class="profile-column">-->
+<!--            <h2>Game Details</h2>-->
+<!--            <p class="profile-detail" th:text="'Games: ' + ${userProfile.favoriteGame}">Games: Fortnite</p>-->
+<!--        </div>-->
+<!--    </section>-->
+
+    <section class="profile-bio">
+        <h2>About Me</h2>
+        <p>
+            <span th:text="${userProfile.bio}">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam varius
+                metus at justo scelerisque, vel rhoncus nisl imperdiet. Sed bibendum
+                fringilla augue, eu commodo nunc laoreet eu. Curabitur ac risus
+                ligula.
+            </span>
+        </p>
+    </section>
+</main>
 </body>
 </html>
