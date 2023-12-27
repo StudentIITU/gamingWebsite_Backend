@@ -3,6 +3,7 @@ package com.Gaming.impl;
 import com.Gaming.components.Gamer;
 import com.Gaming.repository.GamerRepo;
 import com.Gaming.services.GamerService;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -16,9 +17,11 @@ public class GamerServiceImpl implements GamerService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        Optional<Gamer> gamer = repo.findByEmail(username);
+        Gamer gamer = repo.findByEmail(username);
         if (gamer != null) {
-            throw new UsernameNotFoundException("User not found");
+            User secUser = new User(gamer.getEmail(), gamer.getPassword(), gamer.getRoles());
+
+            return secUser;
         }
         throw new UsernameNotFoundException("User not found");
     }
